@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { searchPlayer, getToken } from './Api';
+import { searchPlayer, accessToken } from './Api';
+
 
 function SearchBar() {
     const [query, setQuery] = useState('');
@@ -10,11 +11,10 @@ function SearchBar() {
         console.log(playerData);
       }, [playerData]);
 
-    const searchPlayerByName = async (event) => {
+    async function searchPlayerByName(event) {
         event.preventDefault();
         const [characterName, realm] = query.split('-');
         
-        const accessToken = await getToken();
         //This creates two new variables, playerSearchData and error. The data property from the returned object is assigned to the playerSearchData variable, and the error property remains as is.
         const { data: playerSearchData, error} = await searchPlayer(accessToken, {characterName, realm});
         if (playerSearchData) {
@@ -25,6 +25,7 @@ function SearchBar() {
     };
     
     function handleChange(e) {
+      //hit api, search character name with server attached
         setQuery(e.target.value);
     }
 

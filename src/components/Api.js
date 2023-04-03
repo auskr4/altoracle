@@ -36,4 +36,7 @@ const searchPlayer = async (accessToken, query) => {
       return { data: null, error: error };
     }
   };
-export { searchPlayer, getToken };
+
+const accessToken = getToken();
+
+export { searchPlayer, accessToken };
