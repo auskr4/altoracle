@@ -1,15 +1,38 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { searchPlayer, accessToken } from './Api';
+import { searchPlayer, accessToken, searchCharacters } from './Api';
 
 
 function SearchBar() {
     const [query, setQuery] = useState('');
     const [playerData, setPlayerData] = useState(null);
+    const [suggestedNames, setSuggestedNames] = useState(null);
 
     useEffect(() => {
         console.log(playerData);
       }, [playerData]);
+
+    useEffect(() => {
+      const search = async () => {
+        if (query.length > 2) {
+          const [characterName, realm] = query.split('-');
+          const { data: searchData, error } = await searchCharacters(accessToken, {
+            characterName,
+            realm,
+          });
+  
+          if (searchData) {
+            setSuggestedNames(searchData.results.map((result) => result.data.name));
+          } else {
+            console.error(error);
+          }
+        } else {
+          setSuggestedNames([]);
+        }
+      };
+  
+      search();
+    }, [query]);  
 
     async function searchPlayerByName(event) {
         event.preventDefault();
@@ -46,5 +69,4 @@ function SearchBar() {
       );
       
 }
-
 export default SearchBar;

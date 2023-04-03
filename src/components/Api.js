@@ -35,8 +35,26 @@ const searchPlayer = async (accessToken, query) => {
       console.error('Error getting character profile:', error);
       return { data: null, error: error };
     }
-  };
+};
+
+const searchCharacters = async (accessToken, query) => {
+  try {
+    const response = await axios.get(
+      `https://us.api.blizzard.com/data/wow/search/character?namespace=profile-us&locale=en_US&name.${query.characterName}&realm.slug=${query.realm}`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    );
+    return { data: response.data, error: null };
+  } catch (error) {
+    console.error('Error searching characters:', error);
+    return { data: null, error: error };
+  }
+};
 
 const accessToken = getToken();
+console.log(getToken());
 
-export { searchPlayer, accessToken };
+export { searchPlayer, searchCharacters, accessToken };
