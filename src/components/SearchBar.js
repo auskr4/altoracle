@@ -13,14 +13,15 @@ function SearchBar() {
     const searchPlayerByName = async (event) => {
         event.preventDefault();
         const [characterName, realm] = query.split('-');
-        console.log(characterName, realm);
+        
         const accessToken = await getToken();
-        console.log(accessToken);
-        const playerSearchData = await searchPlayer(accessToken, {characterName, realm});
-        //console.log(playerSearchData);
-        setPlayerData(playerSearchData);
-        //console.log(playerData);
-      };
+        const { data: playerSearchData, error} = await searchPlayer(accessToken, {characterName, realm});
+        if (playerSearchData) {
+            setPlayerData(playerSearchData);
+        } else {
+            console.error(error)
+        }
+    };
     
     function handleChange(e) {
         setQuery(e.target.value);

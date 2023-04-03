@@ -30,9 +30,10 @@ const searchPlayer = async (accessToken, query) => {
           },
         }
       );
-      return response.data;
+      return { data: response.data, error: null };
     } catch (error) {
-      console.error('Error getting PVP rating:', error);
+      console.error('Error getting character profile:', error);
+      return { data: null, error: error };
     }
   };
 export { searchPlayer, getToken };
