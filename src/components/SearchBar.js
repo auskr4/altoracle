@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { searchPlayer, accessToken } from './Api';
+import Profile from './Profile';
 
 
 function SearchBar() {
@@ -22,7 +23,7 @@ function SearchBar() {
         } else {
             console.error(error)
         }
-    };
+    }
     
     function handleChange(e) {
       //hit api, search character name with server attached
@@ -32,16 +33,12 @@ function SearchBar() {
     return (
         <div>
           <form onSubmit={searchPlayerByName}>
-            <input type="text" value={query} onChange={handleChange} />
+            <input type="text" value={query} onChange={handleChange} placeholder="name-server"/>
             <button type="submit">Find the rat and expose it</button>
           </form>
-          {playerData && (
-            <div>
-              <h2>{playerData.name}</h2>
-              <p>Level {playerData.level} {playerData.active_spec.name} {playerData.character_class.name}</p>
-              {/* more Ponies */}
-            </div>
-          )}
+          <Profile 
+            playerData={playerData}
+            query={query} />
         </div>
       );
       

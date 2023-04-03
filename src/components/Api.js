@@ -37,6 +37,24 @@ const searchPlayer = async (accessToken, query) => {
     }
   };
 
+const getCharacterPvpSummary = async (accessToken, query) => {
+  console.log('getCharacterPvpSummary has been called')
+  try {
+    const response = await axios.get(
+      `https://us.api.blizzard.com/profile/wow/character/${query.realm}/${query.characterName}/pvp-summary`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`, 
+        },
+      }
+    );
+    return {data: response.data, error: null};
+  } catch(error) {
+    console.log('Error getting PVP summary:', error);
+    return { data: null, error: error};
+  }
+} 
+
 const accessToken = getToken();
 
-export { searchPlayer, accessToken };
+export { searchPlayer, accessToken , getCharacterPvpSummary };
