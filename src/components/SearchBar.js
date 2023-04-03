@@ -15,6 +15,7 @@ function SearchBar() {
         const [characterName, realm] = query.split('-');
         
         const accessToken = await getToken();
+        //This creates two new variables, playerSearchData and error. The data property from the returned object is assigned to the playerSearchData variable, and the error property remains as is.
         const { data: playerSearchData, error} = await searchPlayer(accessToken, {characterName, realm});
         if (playerSearchData) {
             setPlayerData(playerSearchData);
