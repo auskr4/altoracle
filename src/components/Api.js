@@ -38,10 +38,11 @@ const searchPlayer = async (accessToken, query) => {
   };
 
 const getCharacterPvpSummary = async (accessToken, query) => {
-  console.log('getCharacterPvpSummary has been called')
   try {
     const response = await axios.get(
-      `https://us.api.blizzard.com/profile/wow/character/${query.realm}/${query.characterName}/pvp-summary`,
+      `https://us.api.blizzard.com/profile/wow/character/${query.realm}/${query.characterName}/pvp-bracket/3v3?namespace=profile-us&locale=en_US`,
+      //`https://us.api.blizzard.com/profile/wow/character/${query.realm}/${query.characterName}/achievements?namespace=profile-us`,
+      //`https://us.api.blizzard.com/profile/wow/character/${query.realm}/${query.characterName}?namespace=profile-us&locale=en_US`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`, 
@@ -55,6 +56,6 @@ const getCharacterPvpSummary = async (accessToken, query) => {
   }
 } 
 
-const accessToken = getToken();
+//const accessToken = getToken();
 
-export { searchPlayer, accessToken , getCharacterPvpSummary };
+export { searchPlayer, getToken , getCharacterPvpSummary };
