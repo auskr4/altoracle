@@ -1,0 +1,53 @@
+{
+    "_links": {
+        "self": {
+            "href": "https://us.api.blizzard.com/profile/wow/character/tichondrius/maxla/pvp-bracket/3v3?namespace=profile-us"
+        }
+    },
+    "character": {
+        "key": {
+            "href": "https://us.api.blizzard.com/profile/wow/character/tichondrius/maxla?namespace=profile-us"
+        },
+        "name": "Maxla",
+        "id": 237432288,
+        "realm": {
+            "key": {
+                "href": "https://us.api.blizzard.com/data/wow/realm/11?namespace=dynamic-us"
+            },
+            "name": "Tichondrius",
+            "id": 11,
+            "slug": "tichondrius"
+        }
+    },
+    "faction": {
+        "type": "ALLIANCE",
+        "name": "Alliance"
+    },
+    "bracket": {
+        "id": 1,
+        "type": "ARENA_3v3"
+    },
+    "rating": 1694,
+    "season": {
+        "key": {
+            "href": "https://us.api.blizzard.com/data/wow/pvp-season/34?namespace=dynamic-us"
+        },
+        "id": 34
+    },
+    "tier": {
+        "key": {
+            "href": "https://us.api.blizzard.com/data/wow/pvp-tier/210?namespace=static-10.0.7_48520-us"
+        },
+        "id": 210
+    },
+    "season_match_statistics": {
+        "played": 398,
+        "won": 202,
+        "lost": 196
+    },
+    "weekly_match_statistics": {
+        "played": 0,
+        "won": 0,
+        "lost": 0
+    }
+}
