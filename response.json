@@ -51,3 +51,261 @@
         "lost": 0
     }
 }
+//pvp summary
+{
+    "_links": {
+        "self": {
+            "href": "https://us.api.blizzard.com/profile/wow/character/tichondrius/maxla/pvp-summary?namespace=profile-us"
+        }
+    },
+    "brackets": [
+        {
+            "href": "https://us.api.blizzard.com/profile/wow/character/tichondrius/maxla/pvp-bracket/shuffle-priest-discipline?namespace=profile-us"
+        },
+        {
+            "href": "https://us.api.blizzard.com/profile/wow/character/tichondrius/maxla/pvp-bracket/3v3?namespace=profile-us"
+        },
+        {
+            "href": "https://us.api.blizzard.com/profile/wow/character/tichondrius/maxla/pvp-bracket/2v2?namespace=profile-us"
+        }
+    ],
+    "honor_level": 333,
+    "pvp_map_statistics": [
+        {
+            "world_map": {
+                "name": "Alterac Valley",
+                "id": 30
+            },
+            "match_statistics": {
+                "played": 130,
+                "won": 100,
+                "lost": 30
+            }
+        },
+        {
+            "world_map": {
+                "name": "Classic Warsong Gulch",
+                "id": 489
+            },
+            "match_statistics": {
+                "played": 42,
+                "won": 22,
+                "lost": 20
+            }
+        },
+        {
+            "world_map": {
+                "name": "Classic Arathi Basin",
+                "id": 529
+            },
+            "match_statistics": {
+                "played": 34,
+                "won": 13,
+                "lost": 21
+            }
+        },
+        {
+            "world_map": {
+                "name": "Eye of the Storm",
+                "id": 566
+            },
+            "match_statistics": {
+                "played": 55,
+                "won": 29,
+                "lost": 26
+            }
+        },
+        {
+            "world_map": {
+                "name": "Strand of the Ancients",
+                "id": 607
+            },
+            "match_statistics": {
+                "played": 22,
+                "won": 8,
+                "lost": 14
+            }
+        },
+        {
+            "world_map": {
+                "name": "Isle of Conquest",
+                "id": 628
+            },
+            "match_statistics": {
+                "played": 56,
+                "won": 30,
+                "lost": 26
+            }
+        },
+        {
+            "world_map": {
+                "name": "Twin Peaks",
+                "id": 726
+            },
+            "match_statistics": {
+                "played": 49,
+                "won": 24,
+                "lost": 25
+            }
+        },
+        {
+            "world_map": {
+                "name": "Silvershard Mines",
+                "id": 727
+            },
+            "match_statistics": {
+                "played": 53,
+                "won": 26,
+                "lost": 27
+            }
+        },
+        {
+            "world_map": {
+                "name": "The Battle for Gilneas",
+                "id": 761
+            },
+            "match_statistics": {
+                "played": 61,
+                "won": 38,
+                "lost": 23
+            }
+        },
+        {
+            "world_map": {
+                "name": "Rated Eye of the Storm",
+                "id": 968
+            },
+            "match_statistics": {
+                "played": 3,
+                "won": 5,
+                "lost": 0
+            }
+        },
+        {
+            "world_map": {
+                "name": "Temple of Kotmogu",
+                "id": 998
+            },
+            "match_statistics": {
+                "played": 40,
+                "won": 24,
+                "lost": 16
+            }
+        },
+        {
+            "world_map": {
+                "name": "Deepwind Gorge (Legacy)",
+                "id": 1105
+            },
+            "match_statistics": {
+                "played": 21,
+                "won": 9,
+                "lost": 12
+            }
+        },
+        {
+            "world_map": {
+                "name": "Ashran",
+                "id": 1191
+            },
+            "match_statistics": {
+                "played": 6,
+                "won": 3,
+                "lost": 3
+            }
+        },
+        {
+            "world_map": {
+                "name": "Southshore vs. Tarren Mill",
+                "id": 1280
+            },
+            "match_statistics": {
+                "played": 1,
+                "won": 0,
+                "lost": 1
+            }
+        },
+        {
+            "world_map": {
+                "name": "Arathi Basin Winter",
+                "id": 1681
+            },
+            "match_statistics": {
+                "played": 2,
+                "won": 1,
+                "lost": 1
+            }
+        },
+        {
+            "world_map": {
+                "name": "Seething Shore",
+                "id": 1803
+            },
+            "match_statistics": {
+                "played": 16,
+                "won": 11,
+                "lost": 5
+            }
+        },
+        {
+            "world_map": {
+                "name": "Warsong Gulch",
+                "id": 2106
+            },
+            "match_statistics": {
+                "played": 24,
+                "won": 19,
+                "lost": 5
+            }
+        },
+        {
+            "world_map": {
+                "name": "Arathi Basin",
+                "id": 2107
+            },
+            "match_statistics": {
+                "played": 31,
+                "won": 16,
+                "lost": 15
+            }
+        },
+        {
+            "world_map": {
+                "name": "Battle for Wintergrasp",
+                "id": 2118
+            },
+            "match_statistics": {
+                "played": 5,
+                "won": 2,
+                "lost": 3
+            }
+        },
+        {
+            "world_map": {
+                "name": "Deepwind Gorge",
+                "id": 2245
+            },
+            "match_statistics": {
+                "played": 28,
+                "won": 10,
+                "lost": 18
+            }
+        }
+    ],
+    "honorable_kills": 19298,
+    "character": {
+        "key": {
+            "href": "https://us.api.blizzard.com/profile/wow/character/tichondrius/maxla?namespace=profile-us"
+        },
+        "name": "Maxla",
+        "id": 237432288,
+        "realm": {
+            "key": {
+                "href": "https://us.api.blizzard.com/data/wow/realm/11?namespace=dynamic-us"
+            },
+            "name": "Tichondrius",
+            "id": 11,
+            "slug": "tichondrius"
+        }
+    }
+}

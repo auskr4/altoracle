@@ -40,7 +40,7 @@ function SearchBar() {
     return (
         <div>
           <form onSubmit={searchPlayerByName}>
-            <input type="text" value={query} onChange={handleChange} placeholder="name-server"/>
+            <input type="text" value={query} onChange={handleChange} default= "Mylittlepig-tichondrius" placeholder="Mylittlepig-tichondrius"/>
             <button type="submit">Find the rat and expose it</button>
           </form>
           <Profile 

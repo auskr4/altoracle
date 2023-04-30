@@ -37,7 +37,7 @@ const searchPlayer = async (accessToken, query) => {
     }
   };
 
-const getCharacterPvpSummary = async (accessToken, query) => {
+const get3v3Rating = async (accessToken, query) => {
   try {
     const response = await axios.get(
       `https://us.api.blizzard.com/profile/wow/character/${query.realm}/${query.characterName}/pvp-bracket/3v3?namespace=profile-us&locale=en_US`,
@@ -51,11 +51,27 @@ const getCharacterPvpSummary = async (accessToken, query) => {
     );
     return {data: response.data, error: null};
   } catch(error) {
-    console.log('Error getting PVP summary:', error);
+    console.log('Error getting 3v3 rating:', error);
     return { data: null, error: error};
   }
 } 
 
+const get2v2Rating = async (accessToken, query) => {
+  try {
+    const response = await axios.get(
+      `https://us.api.blizzard.com/profile/wow/character/${query.realm}/${query.characterName}/pvp-bracket/2v2?namespace=profile-us&locale=en_US`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`, 
+        },
+      }
+    );
+    return {data: response.data, error: null};
+  } catch(error) {
+    console.log('Error getting 2v2 rating:', error);
+    return { data: null, error: error};
+  }
+} 
 //const accessToken = getToken();
 
-export { searchPlayer, getToken , getCharacterPvpSummary };
+export { searchPlayer, getToken , get3v3Rating, get2v2Rating };
