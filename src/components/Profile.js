@@ -32,22 +32,23 @@ function Profile({ playerData, query }) {
         }
     }
 
-    // async function searchCharacterStats() {
-    //     const [characterName, realm] = query.split('-');
+    async function searchCharacterStats() {
+        const [characterName, realm] = query.split('-');
 
-    //     const {data: rating2v2Data, error} = await get2v2Rating(token, {characterName, realm});
-    //     if (rating2v2Data) {
-    //         setRating2v2(rating2v2Data)
-    //     } else {
-    //         console.error(`error: ${error}`)
-    //     }
-    // }
+        const {data: characterStats, error} = await getCharacterStats(token, {characterName, realm});
+        if (characterStats) {
+            setCharacterStats(characterStats)
+        } else {
+            console.error(`error: ${error}`)
+        }
+    }
 
     useEffect(() => {
         if (playerData) {
             //console.log(playerData.pvp_summary);
             searchRating3v3();
-            searchRating2v2()
+            searchRating2v2();
+            searchCharacterStats();
         }
     }, [playerData]);
 

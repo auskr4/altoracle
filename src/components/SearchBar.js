@@ -4,7 +4,7 @@ import { searchPlayer } from "./Api";
 import Profile from "./Profile";
 import { useContext } from "react";
 import { TokenContext } from "./TokenContext";
-import styles from "./SearchBar.module.css";
+//import styles from "./SearchBar.module.css";
 
 
 function SearchBar() {
@@ -33,6 +33,7 @@ function SearchBar() {
 
   return (
     <div className="bg-gray-800 text-white p-4 font-mono">
+      <h1 className="text-left text-2xl">Alt Oracle</h1>
       <form onSubmit={searchPlayerByName} className="m-4 p-4">
         <input
           type="text"
@@ -43,7 +44,7 @@ function SearchBar() {
         />
         <button
           type="submit"
-          className={`relative bg-gray-700 text-white p-2 px-4 rounded transition duration-200 ease-in-out group ${styles.glowEffect} border-2 border-gray-500 outline-none focus:outline-glow focus:ring-2 focus:ring-yellow-400 focus:border-gray-500`}
+          className={`relative bg-gray-700 text-white p-2 px-4 rounded transition duration-200 ease-in-out group border-2 border-gray-500 outline-none focus:outline-glow focus:ring-2 focus:ring-yellow-400 focus:border-gray-500`}
           
         >
           Expose Rat
