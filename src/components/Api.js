@@ -72,6 +72,21 @@ const get2v2Rating = async (accessToken, query) => {
     return { data: null, error: error};
   }
 } 
-//const accessToken = getToken();
 
-export { searchPlayer, getToken , get3v3Rating, get2v2Rating };
+const getCharacterStats = async (accessToken, query) => {
+  try {
+    const response = await axios.get(
+      `https://us.api.blizzard.com/profile/wow/character/${query.realm}/${query.characterName}/achievements/statistics?namespace=profile-us&locale=en_US`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`, 
+        },
+      }
+    );
+    return {data: response.data, error: null};
+  } catch(error) {
+    console.log('Error getting Character stats', error);
+    return { data: null, error: error};
+  }
+} 
+export { searchPlayer, getToken , get3v3Rating, get2v2Rating, getCharacterStats };
