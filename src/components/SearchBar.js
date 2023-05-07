@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { searchPlayer } from "./Api";
 import Profile from "./Profile";
+import CharacterModel from "./CharacterModel";
 import { useContext } from "react";
 import { TokenContext } from "./TokenContext";
 //import styles from "./SearchBar.module.css";
@@ -12,9 +13,11 @@ function SearchBar() {
   const [playerData, setPlayerData] = useState(null);
   const token = useContext(TokenContext);
 
+  const lcQuery = query.toLowerCase().split("-")
+  const [characterName, realm] = lcQuery
+
   async function searchPlayerByName(event) {
     event.preventDefault();
-    const [characterName, realm] = query.split("-");
 
     const { data: playerSearchData, error } = await searchPlayer(token, {
       characterName,
@@ -50,7 +53,8 @@ function SearchBar() {
           Expose Rat
         </button>
       </form>
-      <Profile playerData={playerData} query={query} />
+      <Profile playerData={playerData} query={lcQuery} />
+      {/* <CharacterModel playerData={playerData} query={lcQuery} /> */}
     </div>
   );
 }

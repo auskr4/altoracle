@@ -89,4 +89,22 @@ const getCharacterStats = async (accessToken, query) => {
     return { data: null, error: error};
   }
 } 
-export { searchPlayer, getToken , get3v3Rating, get2v2Rating, getCharacterStats };
+
+const getCharacterModel = async (accessToken, query) => {
+  try {
+    const response = await axios.get(
+      `https://us.api.blizzard.com/profile/wow/character/${query.realm}/${query.characterName}/appearance?namespace=profile-us&locale=en_US`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`, 
+        },
+      }
+    );
+    return {data: response.data, error: null};
+  } catch(error) {
+    console.log('Error getting Character model', error);
+    return { data: null, error: error};
+  }
+}
+
+export { searchPlayer, getToken , get3v3Rating, get2v2Rating, getCharacterStats, getCharacterModel };
